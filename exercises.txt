@@ -269,3 +269,51 @@ select distinct Account.email from Account join AddressBook on Account.id = Addr
 
 Exercise 10
 ===========
+select firstName, lastName from Entry where TIME(birthday) > '19:59:59' AND TIME(birthday) < '21:00:00' AND MONTH(birthday) != '02';
+
+            ...
+        
+| Rhoda       | Mcleod     |
+| Marcia      | Simmons    |
+| Kyle        | Blake      |
+| Baxter      | Oneal      |
+| Ivor        | Powers     |
+| Briar       | Small      |
+| Jayme       | Cleveland  |
++-------------+------------+
+249 rows in set (0.00 sec)
+
+
+
+Exercise 11
+===========
+select city from Address where country in ('Canada', 'Austria', 'Isle of Man', 'Ireland', 'Japan') group by city,country;
++----------------+-------------+
+| city           | country     |
++----------------+-------------+
+| Dubbo          | Austria     |
+| Ceyhan         | Isle of Man |
+| Jackson        | Ireland     |
+| Belfast        | Isle of Man |
+| Tauranga       | Austria     |
+| Rzeszów        | Japan       |
+| Cartago        | Ireland     |
+| Cagnes-sur-Mer | Ireland     |
+
+            ...
+
+| Calmar         | Canada      |
+| Hamburg        | Austria     |
+| Quesada        | Canada      |
+| Pabianice      | Isle of Man |
+| Dover          | Isle of Man |
+| Vienna         | Austria     |
+| Berlin         | Japan       |
+| Hillsboro      | Canada      |
++----------------+-------------+
+58 rows in set (0.00 sec)
+
+
+
+Exercise 12
+===========
