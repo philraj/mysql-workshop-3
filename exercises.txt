@@ -125,3 +125,38 @@ select LCASE(country) as Country, count(*) from Address group by country order b
 
 Exercise 4
 ==========
+select CONCAT(SUBSTRING(firstName, 1, LENGTH(firstName)-1), UPPER(SUBSTRING(firstName, -1))) as firstName from AddressBook join Entry on AddressBook.name = 'Pharetra Ut Limited' AND AddressBook.id = Entry.addressBookId;                                                                                                                                          
++-------------+
+| firstName   |
++-------------+
+| ZeleniA     |
+| AbduL       |
+| IdolA       |
+| IllanA      |
+| WinifreD    |
+| BuckminsteR |
+| HeidI       |
+| NelL        |
+| CiarA       |
+| SylviA      |
+| CaryN       |
+| DieteR      |
+| JamaliA     |
+
+     ...
+
+| DriscolL    |
+| GaretH      |
+| ColT        |
+| MarthA      |
+| SierrA      |
+| NitA        |
+| CelestE     |
+| KathleeN    |
+| SamueL      |
+| AaroN       |
+| CheyennE    |
+| BretT       |
+| RebekaH     |
++-------------+
+65 rows in set (0.01 sec)
