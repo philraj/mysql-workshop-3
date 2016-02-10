@@ -71,6 +71,14 @@ Address;
 
 
 
-____________
-|Exercise 2|
-============
+Exercise 2
+==========
+
+source data/import-account.sql
+source data/import-addressbook.sql
+source data/import-entry.sql
+
+
+
+Exercise 3
+==========
