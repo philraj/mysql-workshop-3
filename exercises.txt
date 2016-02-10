@@ -82,3 +82,46 @@ source data/import-entry.sql
 
 Exercise 3
 ==========
+select LCASE(country) as Country, count(*) from Address group by country order by `count(*)` DESC;                                                                             
++----------------------------------------------+----------+
+| Country                                      | count(*) |
++----------------------------------------------+----------+
+| mozambique                                   |       18 |
+| saint helena, ascension and tristan da cunha |       16 |
+| thailand                                     |       15 |
+| argentina                                    |       15 |
+| wallis and futuna                            |       15 |
+| andorra                                      |       15 |
+| canada                                       |       15 |
+| united states minor outlying islands         |       15 |
+| lebanon                                      |       15 |
+| curaçao                                      |       15 |
+| congo, the democratic republic of the        |       14 |
+| brazil                                       |       14 |
+| united kingdom (great britain)               |       14 |
+| ethiopia                                     |       14 |
+
+                     ...
+
+| liechtenstein                                |        5 |
+| trinidad and tobago                          |        5 |
+| hong kong                                    |        5 |
+| palestine, state of                          |        5 |
+| montenegro                                   |        5 |
+| nepal                                        |        5 |
+| samoa                                        |        5 |
+| korea, south                                 |        5 |
+| monaco                                       |        5 |
+| jamaica                                      |        4 |
+| iceland                                      |        3 |
+| saudi arabia                                 |        3 |
+| mauritius                                    |        3 |
+| saint vincent and the grenadines             |        3 |
+| niger                                        |        2 |
++----------------------------------------------+----------+
+249 rows in set, 1 warning (0.01 sec)
+
+
+
+Exercise 4
+==========
