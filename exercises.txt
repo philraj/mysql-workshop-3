@@ -190,3 +190,82 @@ select ElectronicMail.content from ElectronicMail join Entry on ElectronicMail.e
 
 Exercise 6
 ==========
+select Phone.content from Entry join Phone on Phone.entryId = Entry.id AND Entry.firstName = 'Charlotte' AND Entry.lastName = 'Jenkins';
++----------------+
+| content        |
++----------------+
+| (110) 167-3420 |
+| (605) 175-1334 |
++----------------+
+2 rows in set (0.00 sec)
+
+
+
+Exercise 7
+==========
+select distinct substring_index(content, '@', -1) from ElectronicMail;
+
+                 ...
+                 
+| Nuncacsem.net                     |
+| natoque.ca                        |
+| Praesentinterdumligula.org        |
+| Praesent.ca                       |
+| etcommodo.com                     |
+| sedduiFusce.edu                   |
+| nisl.org                          |
+| tellusimperdietnon.net            |
+| sapienimperdiet.com               |
++-----------------------------------+
+1983 rows in set (0.01 sec)
+
+
+
+Exercise 8
+==========
+select Phone.subtype, count(*) from Entry join Phone on Phone.entryId = Entry.id AND (Entry.birthday > '1950-10' AND Entry.birthday < '1960-10') group by Phone.subtype;
++----------+----------+
+| subtype  | count(*) |
++----------+----------+
+| landline |      170 |
+| cellular |      138 |
+| fax      |      134 |
++----------+----------+
+
+
+
+Exercise 9
+==========
+select distinct Account.email from Account join AddressBook on Account.id = AddressBook.accountId join Entry on AddressBook.id = Entry.addressBookId join Phone on Entry.id = Phone.entryId WHERE Phone.content REGEXP '^[0-9]-.*';
++-------------------------------------------------------+
+| email                                                 |
++-------------------------------------------------------+
+| Proin.nisl@arcuMorbisit.net                           |
+| ipsum.Donec@tellus.ca                                 |
+| aptent@nequesedsem.edu                                |
+| Nam.consequat.dolor@nondapibusrutrum.ca               |
+| non.justo.Proin@variuset.edu                          |
+| Praesent@miDuis.net                                   |
+| ultrices.sit@arcu.co.uk                               |
+| diam.luctus.lobortis@ipsumac.ca                       |
+
+                        ...
+
+| Phasellus.vitae@diamat.com                            |
+| porta@Vivamus.com                                     |
+| adipiscing.fringilla.porttitor@Quisqueac.edu          |
+| vitae@tinciduntpede.com                               |
+| tincidunt.nibh.Phasellus@Inscelerisquescelerisque.net |
+| consectetuer.rhoncus@pedeacurna.net                   |
+| magna.Sed.eu@duiSuspendisseac.edu                     |
+| bibendum@orciUtsemper.com                             |
+| orci.consectetuer.euismod@lacinia.com                 |
+| ipsum.non@Nullaeu.net                                 |
+| dignissim.lacus@vel.ca                                |
++-------------------------------------------------------+
+60 rows in set (0.01 sec)
+
+
+
+Exercise 10
+===========
