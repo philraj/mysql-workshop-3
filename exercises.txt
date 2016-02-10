@@ -340,3 +340,21 @@ mysql> select SUBSTRING(content, 1, 1) as `Country Code`, SUBSTRING(content, 3, 
 | 1            | 778       | 730-017     |
 +--------------+-----------+-------------+
 100 rows in set (0.00 sec)
+
+
+
+Exercise 13
+===========
+select DATEDIFF(createdOn, modifiedOn) as `Date Diff` from AddressBook;
+
+     ...
+
+|       284 |
+|        74 |
+|       309 |
+|      -353 |
+|       230 |
+|       253 |
+|       -77 |
++-----------+
+1100 rows in set (0.00 sec)
