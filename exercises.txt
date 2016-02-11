@@ -358,3 +358,33 @@ select DATEDIFF(createdOn, modifiedOn) as `Date Diff` from AddressBook;
 |       -77 |
 +-----------+
 1100 rows in set (0.00 sec)
+
+
+
+Exercise 14
+===========
+select INSERT(INSERT(INSERT(REPLACE(REVERSE(content), '-', ''), 2, 0, '-'), 6, 0, '-'), 10, 0, '-') as `Fax #` from Phone where content REGEXP '^[0-9]-.*' union select INSERT(INSERT(INSERT(INSERT(REPLACE(REPLACE(REPLACE(REPLACE(REVERSE(content), '(', ''), ')', ''), ' ', ''), '-', ''), 1, 0, '('), 5, 0, ')'), 6, 0, ' '), 10, 0, '-') from Phone where content REGEXP '^\\(.*';
+
+        ...
+        
+| (757) 530-8736 |
+| (165) 312-9528 |
+| (749) 025-6858 |
+| (760) 375-3675 |
+| (688) 152-6446 |
+| (720) 149-6834 |
+| (242) 561-8345 |
+| (022) 725-9175 |
++----------------+
+2200 rows in set (0.00 sec)
+
+
+
+Exercise 15
+===========
+update ElectronicMail set type= CASE when type='home' THEN 'work' when type='work' THEN 'home' ELSE type END;
+
+
+
+Exercise 16
+===========
